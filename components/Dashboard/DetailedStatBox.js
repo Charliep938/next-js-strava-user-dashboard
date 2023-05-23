@@ -11,12 +11,15 @@ const DetailedStatsBox = ({ title, activities, activityType }) => {
     let longestActivity = null;
     let longestDistance = 0;
     let totalKudos = 0;
+    let achivementCount = 0
 
     for (let activity of activities) {
       if (activity.sport_type === title) {
         count += 1;
         distance += activity.distance;
         totalElapsedTime += activity.elapsed_time;
+        totalKudos += activity.kudos_count;
+        achivementCount += activity.achievement_count;
 
         if (!longestActivity || activity.elapsed_time > longestActivity.elapsed_time) {
           longestActivity = activity;
@@ -26,7 +29,7 @@ const DetailedStatsBox = ({ title, activities, activityType }) => {
           longestDistance = activity.distance;
         }
 
-        totalKudos += activity.kudos_count; // Assuming 'kudos' is a property of each activity
+        
       }
     }
 
@@ -40,7 +43,7 @@ const DetailedStatsBox = ({ title, activities, activityType }) => {
             <div>
               Longest Activity
             </div>
-            <div>
+            <div className={dashboardStyles.detailedStatTitle} >
               {formatTime(longestActivity.elapsed_time)}
             </div>
           </div>
@@ -51,8 +54,19 @@ const DetailedStatsBox = ({ title, activities, activityType }) => {
             <div>
               Longest Distance
             </div>
-            <div>
+            <div className={dashboardStyles.detailedStatTitle}>
               {longestDistance === 0 ? 'N/A' : metersToKilometers(longestDistance) + 'KM'}
+            </div>
+          </div>
+          <div className={dashboardStyles.detailedstat}>
+            <div>
+              <Image src='/img/badge.png' width={32} height={32} />
+            </div>
+            <div>
+              Total Achievements
+            </div>
+            <div className={dashboardStyles.detailedStatTitle}>
+              {achivementCount}
             </div>
           </div>
           <div className={dashboardStyles.detailedstat}>
@@ -62,7 +76,7 @@ const DetailedStatsBox = ({ title, activities, activityType }) => {
             <div>
               Total Kudos
             </div>
-            <div>
+            <div className={dashboardStyles.detailedStatTitle}>
               {totalKudos}
             </div>
           </div>

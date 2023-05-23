@@ -5,11 +5,11 @@ import StatsBox from '../StatBox';
 import DetailedStatsBox from '../DetailedStatBox';
 import LastActivity from '../Last Activity/LastActivity';
 
-const TotalsAndBubble = ({ activities, selectedActivity, lastActivity }) => {
+const TotalsAndBubble = ({ activities, selectedActivity, lastActivity, isDarkMode }) => {
   const renderStatsBox = (title, activities, activityType) => {
     if (activityType === 'All' || activityType === title) {
       return (
-        <StatsBox key={title} title={title} activities={activities} activityType={activityType} />
+        <StatsBox key={title} title={title} activities={activities} activityType={activityType} isDarkMode={isDarkMode} />
       );
     }
     return null;
@@ -27,15 +27,15 @@ const TotalsAndBubble = ({ activities, selectedActivity, lastActivity }) => {
   return (
     <div className={dashboardStyles.boxContainer}>
       <div className={dashboardStyles.allTotals}>
-        <div className={dashboardStyles.statBoxHeader}>
-          <div className={dashboardStyles.statRow}>
+        <div className={`${dashboardStyles.statBoxHeader} ${isDarkMode ? null : dashboardStyles.light}`}>
+          <div className={`${dashboardStyles.statRow} ${isDarkMode ? null : dashboardStyles.light}`}>
             <h2>Type</h2>
             <p>Total count</p>
             <p>Distance</p>
             <p>Elapsed Time</p>
           </div>
         </div>
-        <div className={dashboardStyles.statsContainer}>
+        <div className={`${dashboardStyles.statsContainer} ${isDarkMode ? null : dashboardStyles.light}`}>
           {activities &&
             [...new Set(activities.map(activity => activity.sport_type))]
               .sort((a, b) => {
@@ -50,8 +50,8 @@ const TotalsAndBubble = ({ activities, selectedActivity, lastActivity }) => {
               {renderAdditionalStatsBox()}
       </div>
       <div className={dashboardStyles.stackedCharts}>
-        <BubbleChart selectedActivity={selectedActivity} activities={activities} />
-        <LastActivity lastActivity={lastActivity} selectedActivity={selectedActivity} activities={activities} />
+        <BubbleChart selectedActivity={selectedActivity} activities={activities} isDarkMode={isDarkMode} />
+        <LastActivity lastActivity={lastActivity} selectedActivity={selectedActivity} activities={activities} isDarkMode={isDarkMode} />
       </div>
     </div>
   );

@@ -4,13 +4,13 @@ import { formatDate, metersToKilometers, formatTime } from '../../../helper_func
 import Image from 'next/image';
 import { getImageSrc } from '../../../helper_functions/helper';
 
-const LastActivityRow = ({ lastActivity, selectedActivity, activities }) => {
+const LastActivityRow = ({ lastActivity, selectedActivity, isDarkMode }) => {
   if (lastActivity) {
     return (
       <div className={dashboardStyles.lastActivityRow}>
         <div className={dashboardStyles.lastActivityStatImage}>
           <Image
-            src={getImageSrc(lastActivity.sport_type)}
+            src={`${isDarkMode ? getImageSrc(lastActivity.sport_type) + '.png' : getImageSrc(lastActivity.sport_type) + '-black.png'}`}
             width={32}
             height={32}
             alt="sport type"

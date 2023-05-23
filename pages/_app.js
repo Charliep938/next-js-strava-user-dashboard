@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/globals.css';
+import globalStyles from '../styles/globals.module.css';
 import homeStyles from '../styles/Home.module.css';
 import loaderStyles from '../styles/Loader.module.css';
 import Layout from '../components/Global/Layout';
@@ -145,6 +146,7 @@ function MyApp({ Component }) {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <div className={`${globalStyles.container} ${isDarkMode ? globalStyles.dark : globalStyles.light}`}>
       <Layout
         accessToken={accessToken}
         signOut={signOutHandler}
@@ -155,15 +157,18 @@ function MyApp({ Component }) {
         isDarkMode={isDarkMode}
         fetchAllActivities={fetchAllActivities}
       >
-        <Component accessToken={accessToken}
-        signOut={signOutHandler}
-        isLoading={isLoading}
-        athleteData={athleteData}
-        activities={activities}
-        toggleTheme={toggleTheme}
-        isDarkMode={isDarkMode}
-        fetchAllActivities={fetchAllActivities} />
-      </Layout>
+          <Component
+            accessToken={accessToken}
+            signOut={signOutHandler}
+            isLoading={isLoading}
+            athleteData={athleteData}
+            activities={activities}
+            toggleTheme={toggleTheme}
+            isDarkMode={isDarkMode}
+            fetchAllActivities={fetchAllActivities}
+          />
+        </Layout>
+        </div>
     </LocalizationProvider>
   );
 }

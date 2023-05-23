@@ -3,7 +3,7 @@ import dashboardStyles from '../../styles/Dashboard.module.css';
 import { Select, MenuItem } from '@mui/material';
 import { convertCamelCaseToWords } from '../../helper_functions/helper'
 
-const ActivityFilter = ({ selectedActivity, handleActivityChange, activities }) => {
+const ActivityFilter = ({ selectedActivity, handleActivityChange, activities, isDarkMode }) => {
   const uniqueActivities = [...new Set(activities.map((activity) => activity.sport_type))];
 
   const sortedActivities = uniqueActivities.sort((a, b) => a.localeCompare(b));
@@ -19,7 +19,7 @@ const ActivityFilter = ({ selectedActivity, handleActivityChange, activities }) 
       <label htmlFor="activityFilter">Filter by Activity</label>
       <Select
         id="activityFilter"
-        className={dashboardStyles.activityFilter}
+        className={`${dashboardStyles.activityFilter} ${isDarkMode ? dashboardStyles.dark : dashboardStyles.light }`}
         value={selectedActivity}
         onChange={handleActivityChange}
       >

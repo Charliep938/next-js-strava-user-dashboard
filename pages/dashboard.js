@@ -7,10 +7,7 @@ import dashboardStyles from '../styles/Dashboard.module.css';
 import { useSpring, animated } from '@react-spring/web';
 import Link from 'next/link';
 
-const Dashboard = (props) => {
-  
-  const athleteData = props.athlete;
-  const activities = props.activities;
+const Dashboard = ({athleteData, activities, isDarkMode}) => {
 
   const [selectedActivity, setSelectedActivity] = useState('All');
 
@@ -40,9 +37,10 @@ const Dashboard = (props) => {
           activities={activities}
           selectedActivity={selectedActivity}
           handleActivityChange={handleActivityChange}
+          isDarkMode={isDarkMode}
         />
-        <TotalsAndBubble activities={activities} selectedActivity={selectedActivity} lastActivity={lastActivity} />
-        <ChartRow selectedActivity={selectedActivity} activities={activities} />
+        <TotalsAndBubble activities={activities} selectedActivity={selectedActivity} lastActivity={lastActivity} isDarkMode={isDarkMode} />
+        <ChartRow selectedActivity={selectedActivity} activities={activities} isDarkMode={isDarkMode} />
         <div className={dashboardStyles.poweredBy}>
           <div className={dashboardStyles.poweredText}>Powered by <Link href='https://www.strava.com/' target='_blank'><StravaLogo /></Link></div>
         </div>

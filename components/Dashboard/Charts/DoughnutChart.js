@@ -6,7 +6,7 @@ import {convertCamelCaseToWords} from '../../../helper_functions/helper'
 
 Chart.register(ArcElement);
 
-const DonutChart = ({ selectedActivity, activities }) => {
+const DonutChart = ({ selectedActivity, activities, isDarkMode }) => {
   if (activities) {
 
     let counts = {};
@@ -53,7 +53,7 @@ const DonutChart = ({ selectedActivity, activities }) => {
           title: {
             display: true,
             padding: { top: 5, bottom: 20 },
-            color: '#fff',
+            color: isDarkMode ? '#ffffff' : '#2d3236',
             text: 'Activities Count by Sport',
             font: {
               size: 24,
@@ -87,7 +87,7 @@ const DonutChart = ({ selectedActivity, activities }) => {
       }
 
       return (
-        <div className={styles.doughnutContainer}>
+        <div className={`${styles.doughnutContainer} ${isDarkMode ? null : styles.light}`}>
           <Doughnut data={chartData} options={options} />
         </div>
       );
