@@ -5,7 +5,7 @@ import { formatDate, formatTime, metersToKilometers } from '../../../helper_func
 import { useRouter } from 'next/router';
 
 
-const BubbleChart = ({ selectedActivity, activities }) => {
+const BubbleChart = ({ selectedActivity, activities, isDarkMode }) => {
 
     const router = useRouter();
 
@@ -83,6 +83,7 @@ const BubbleChart = ({ selectedActivity, activities }) => {
 
     // Define the chart options
     const options = {
+        
         responsive: true,
         maintainAspectRatio: false, // Adjusts the chart size based on container dimensions
         plugins: {
@@ -127,7 +128,7 @@ const BubbleChart = ({ selectedActivity, activities }) => {
             title: {
                 display: true,
                 padding: { top: 5, bottom: 20 },
-                color: '#fff',
+                color: isDarkMode ? '#ffffff' : '#2d3236',
                 text: 'Your Last 7 days',
                 font: {
                     size: 24,
@@ -150,7 +151,7 @@ const BubbleChart = ({ selectedActivity, activities }) => {
     };
 
     return (
-        <div className={styles.bubbleContainer}>
+        <div className={`${styles.bubbleContainer} ${isDarkMode ? null : styles.light}`}>
             <Bubble data={data} options={options} />
         </div>
     );

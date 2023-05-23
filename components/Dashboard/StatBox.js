@@ -2,7 +2,7 @@ import React from 'react';
 import dashboardStyles from '../../styles/Dashboard.module.css';
 import { metersToKilometers, formatTime, convertCamelCaseToWords } from '../../helper_functions/helper';
 
-const StatsBox = ({ title, activities, activityType }) => {
+const StatsBox = ({ title, activities, activityType, isDarkMode }) => {
   if (activityType === 'All' || activityType === title) {
     let count = 0;
     let distance = 0;
@@ -17,7 +17,7 @@ const StatsBox = ({ title, activities, activityType }) => {
     }
 
     return (
-      <div className={dashboardStyles.statBox}>
+      <div className={`${dashboardStyles.statBox} ${isDarkMode ? null : dashboardStyles.light}`}>
         <div className={dashboardStyles.statRow}>
           <h2>{convertCamelCaseToWords(title)}</h2>
           <p>{count}</p>

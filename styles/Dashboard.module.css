@@ -101,6 +101,44 @@
     width: 150px;
 }
 
+.statBoxHeader.light, .statsContainer.light, .statBox.light {
+    background-color: #ffffff;
+}
+
+.statBoxHeader.light {
+    border-color: #2d323620 !important;
+}
+
+.light p, .light h2 {
+    color: #2d3236;
+}
+
+.activityFilter.light, .activityFilter.light label {
+    background-color: #ffffff;
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select{
+    color: #2d3236 !important;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+    color: #2d3236 !important;
+}
+
+.activityFilter.dark {
+    color: #ffffff !important;
+}
+
+
+.lastActivity.light {
+    background-color: #fff;
+    color: #2d3236;
+}
+
+.lastActivity.dark {
+    background-color: #2d3236;
+}
+
 .statBox {
     display: flex;
     flex-direction: column;
@@ -184,6 +222,10 @@
     flex-direction: column;
 }
 
+.detailedStatTitle {
+    line-height: 1rem;
+}
+
 
 .allTotals {
     margin: 1rem 0 0 0;
@@ -191,6 +233,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 10px;
+    /* box-shadow: #64646f33 0px 7px 29px 0px; */
 }
 
 .subTitle {

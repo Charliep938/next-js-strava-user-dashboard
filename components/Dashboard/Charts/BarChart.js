@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const BarChart = ({ selectedActivity, activities }) => {;
+const BarChart = ({ selectedActivity, activities, isDarkMode }) => {;
 
   if (activities) {
     const filteredActivities = selectedActivity === 'All'
@@ -54,14 +54,10 @@ const BarChart = ({ selectedActivity, activities }) => {;
           beginAtZero: true,
           ticks: {
             callback: (value) => formatTime(value),
-            color: '#ffffff',
+            
           },
         },
-        x: {
-          ticks: {
-            color: '#ffffff',
-          },
-        },
+        
       },
       plugins: {
         tooltip: {
@@ -100,7 +96,7 @@ const BarChart = ({ selectedActivity, activities }) => {;
         title: {
           display: true,
           padding: { top: 5, bottom: 20 },
-          color: '#fff',
+          color: isDarkMode ? '#ffffff' : '#2d3236',
           text: 'Last 10 Activities by Elapsed Time',
           font: {
             size: 24,
@@ -114,7 +110,7 @@ const BarChart = ({ selectedActivity, activities }) => {;
     };
 
     return (
-      <div className={styles.chartContainer}>
+      <div className={`${styles.chartContainer} ${isDarkMode ? null : styles.light}`}>
         <Bar data={chartData} options={options} />
       </div>
     );

@@ -47,6 +47,10 @@
     height: 70%;
   }
 
+  .light {
+    background-color: #ffffff;
+  }
+
 @media only screen and (max-width: 1200px) {
     .chartContainer, .doughnutContainer, .lineContainer, .bubbleContainer {
         width: 100%;

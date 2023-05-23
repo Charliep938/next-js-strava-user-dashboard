@@ -35,11 +35,10 @@ a {
   flex-direction: row !important;
 }
 
-.MuiPickersPopper-paper {
+.MuiList-root {
   color: #ffffff !important;
+  background-color: #2d3236 !important;
 }
-
-
 
 .MuiInputLabel-root {
   background-color: #2d3236 !important;
@@ -47,11 +46,13 @@ a {
   padding: 2px 10px !important;
 }
 
-
-
-.Mui-required, .MuiSelect-select, .MuiOutlinedInput-input, .MuiFormLabel-root, .MuiInputLabel-root, .MuiPickersDay-root, .MuiDayCalendar-weekDayLabel, .MuiButtonBase-root-MuiIconButton-root-MuiPickersCalendarHeader-switchViewButton .MuiPickersCalendarHeader-switchViewIcon, .MuiSvgIcon-root {
-  color: #ffffff !important;
+.css-cuefkz-MuiContainer-root {
+  padding: 2rem !important;
 }
+
+
+
+
 
 .MuiPickersDay-root.Mui-selected, .MuiButton-root{
   background-color: #fc5200 !important;
@@ -84,10 +85,6 @@ a {
   color: #ffffff50 !important;
 }
 
-.MuiPaper-root, .MuiMenu-paper, .MuiPopover-paper {
-  background-color: #2d3236 !important;
-}
-
 .MuiInputBase-input {
   text-align: center !important;
 }
@@ -97,7 +94,18 @@ a {
   margin-bottom: 2rem !important;
 }
 
+#__next > div > div > div > div.Dashboard_topRow__N_BSa.Dashboard_light__x3crV > div > div > fieldset {
+  border: 0 !important;
+}
 
+#__next > div > div > div > div.Dashboard_topRow__N_BSa.Dashboard_light__x3crV > div > div {
+  width: 300px !important;
+  text-align: center !important;
+}
+
+.MuiMenuItem-root {
+  justify-content: center !important;
+}
 
 @media (min-width: 600px) {
   .MuiContainer-root {

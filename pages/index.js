@@ -1,12 +1,13 @@
 import Dashboard from './dashboard';
 
 const Home = (props) => {
+  console.log(props)
     return (
       <>
         <Dashboard
-          athlete={props.athleteData}
-          athleteStats={props.athleteStats}
+          athleteData={props.athleteData}
           activities={props.activities}
+          isDarkMode={props.isDarkMode}
         />
       </>
     );

@@ -5,7 +5,7 @@ import styles from '../../../styles/BarChart.module.css';
 
 Chart.register(Title, CategoryScale, LinearScale, PointElement, Tooltip, LineController, LineElement);
 
-const LineChart = ({ selectedActivity, activities }) => {
+const LineChart = ({ selectedActivity, activities, isDarkMode }) => {
 
   if (activities) {
 
@@ -49,7 +49,7 @@ const LineChart = ({ selectedActivity, activities }) => {
         title: {
           display: true,
           padding: { top: 5, bottom: 20 },
-          color: '#fff',
+          color: isDarkMode ? '#ffffff' : '#2d3236',
           text: 'Activities Year to Date',
           font: {
             size: 24,
@@ -75,7 +75,7 @@ const LineChart = ({ selectedActivity, activities }) => {
     };
 
     return (
-      <div className={styles.lineContainer}>
+      <div className={`${styles.lineContainer} ${isDarkMode ? null : styles.light}`}>
         <Line data={chartData} options={options} />
       </div>
     );

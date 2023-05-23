@@ -1,0 +1,19 @@
+.container {
+    height: 100vh;
+}
+
+.container.light {
+    background-color: #f0f2f3 !important;
+}
+
+.container.dark {
+    background-color: #1a1b1f !important;
+}
+
+.container.light h1, .container.light label {
+    color: #1a1b1f;
+}
+
+.container.dark h1, .container.dark label {
+    color: #ffffff;
+}
