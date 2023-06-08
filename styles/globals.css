@@ -142,3 +142,11 @@ main {
 .MuiList-root {
   background-color: #2d3236 !important;
 }
+
+.MuiSvgIcon-root, .MuiInputBase-input {
+  color: #ffffff !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: 0.5px solid #ffffff !important;
+}
