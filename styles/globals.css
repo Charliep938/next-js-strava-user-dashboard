@@ -143,10 +143,19 @@ main {
   background-color: #2d3236 !important;
 }
 
-.MuiSvgIcon-root, .MuiInputBase-input {
+.MuiSvgIcon-root, .MuiInputBase-input, .MuiButtonBase-root, .MuiTypography-root {
   color: #ffffff !important;
+}
+
+.MuiTypography-root {
+  font-weight: 700 !important;
 }
 
 .MuiOutlinedInput-notchedOutline {
   border: 0.5px solid #ffffff !important;
+}
+
+.MuiDateCalendar-root {
+  background-color: #2d3236 !important;
+  color: #ffffff !important;
 }
