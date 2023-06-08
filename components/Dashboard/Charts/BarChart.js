@@ -14,26 +14,17 @@ const BarChart = ({ selectedActivity, activities, isDarkMode }) => {;
       ? activities
       : activities.filter(activity => activity.sport_type === selectedActivity);
 
-    const first10Activities = filteredActivities.slice(0, 10); // Retrieve the first 10 activities
+    const first10Activities = filteredActivities.slice(0, 10).reverse(); // Retrieve the first 10 activities
 
     const chartData = {
-      labels: first10Activities.map((activity) => formatDate(activity.start_date_local)).reverse(),
+      labels: first10Activities.map((activity) => formatDate(activity.start_date_local)),
       datasets: [
         {
           label: 'Elapsed Time',
-          data: first10Activities.map((activity) => activity.elapsed_time).reverse(),
+          data: first10Activities.map((activity) => activity.elapsed_time),
           backgroundColor: [
-            '#fc5200',
-            '#fc520095',
-            '#fc520090',
-            '#fc520085',
-            '#fc520080',
-            '#fc520075',
-            '#fc520070',
-            '#fc520065',
-            '#fc520060',
-            '#fc520055',
-          ].reverse(),
+            '#fc5200'
+          ],
         },
       ],
     };

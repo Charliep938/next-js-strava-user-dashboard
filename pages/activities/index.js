@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import activityStyles from '../../styles/activities.module.css';
+import globalStyles from '../../styles/globals.module.css';
 import SportFilter from "../../components/Activities/Filters/SportFilter";
 import DateFilter from "../../components/Activities/Filters/DateFilter";
 import AllActivities from "../../components/Activities/AllActivities";
@@ -55,10 +56,7 @@ function Activities({ activities }) {
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
-        const container = document.getElementById("activityContainer");
-        if (container) {
-            container.scrollTop = 0;
-        }
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
     };
 
     const currentActivitiesCount = paginatedActivities.length; // Count of activities on the current page

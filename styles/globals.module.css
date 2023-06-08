@@ -1,9 +1,10 @@
 .container {
-    height: 100vh;
+    position: relative;
+    top: 70px;
 }
 
 .container.light {
-    background-color: #f0f2f3 !important;
+    background-color: #d4d5d6 !important;
 }
 
 .container.dark {

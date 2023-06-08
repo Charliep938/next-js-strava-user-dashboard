@@ -57,19 +57,6 @@ const Navbar = (props) => {
                 </Link>
               </li>
             </div>
-            <div className={navbarStyles.themeSwitch}>
-              <input
-                type="checkbox"
-                id="themeSwitch"
-                className={navbarStyles.themeSwitch}
-                checked={isDarkMode}
-                onChange={toggleTheme}
-              />
-              <label htmlFor="themeSwitch" className={navbarStyles.themeSwitchLabel}>
-                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-              </label>
-              
-            </div>
 
             <div className={navbarStyles.dropdown}>
               <Link href='/profile'>

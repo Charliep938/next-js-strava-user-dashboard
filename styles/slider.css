@@ -1,0 +1,16 @@
+.slick-slide img {
+    display: inline-block !important;
+  }
+  
+  .slick-slide {
+    width: auto !important;
+  }
+  
+  .slick-track {
+    width: auto !important;
+  }
+  
+  .slick-track {
+    display: flex !important;
+    flex-direction: row !important;
+  }

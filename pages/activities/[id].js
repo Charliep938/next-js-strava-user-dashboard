@@ -9,11 +9,12 @@ import loaderStyles from '../../styles/Loader.module.css';
 
 const MyMap = dynamic(() => import("../../components/Activities/Map"), { ssr: false })
 
-function ActivityDetails() {
+function ActivityDetails(props) {
     const router = useRouter();
     const [details, setDetails] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const accessToken = localStorage.getItem("accessToken");
+
+    const accessToken = props.accessToken;
 
     async function fetchDetails() {
         const activityId = router.query.id;

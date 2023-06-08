@@ -3,7 +3,7 @@ import dashboardStyles from '../../styles/Dashboard.module.css';
 import { metersToKilometers, formatTime, convertCamelCaseToWords } from '../../helper_functions/helper';
 import Image from 'next/image';
 
-const DetailedStatsBox = ({ title, activities, activityType }) => {
+const DetailedStatsBox = ({ title, activities, activityType, isDarkMode }) => {
   if (activityType === 'All' || activityType === title) {
     let count = 0;
     let distance = 0;
@@ -34,11 +34,11 @@ const DetailedStatsBox = ({ title, activities, activityType }) => {
     }
 
     return (
-      <div className={dashboardStyles.detailedstatBox}>
+      <div className={`${dashboardStyles.detailedstatBox} ${isDarkMode ? '' : dashboardStyles.light}`}>
         <div className={dashboardStyles.detailedstatRow}>
           <div className={dashboardStyles.detailedstat}>
             <div>
-              <Image src='/img/clock.png' width={32} height={32} />
+              <Image src={isDarkMode ? '/img/clock.png' : '/img/clock-black.png'} width={32} height={32} />
             </div>
             <div>
               Longest Activity
@@ -49,7 +49,7 @@ const DetailedStatsBox = ({ title, activities, activityType }) => {
           </div>
           <div className={dashboardStyles.detailedstat}>
             <div>
-              <Image src='/img/distance.png' width={32} height={32} />
+              <Image src={isDarkMode ? '/img/distance.png' : '/img/distance-black.png'} width={32} height={32} />
             </div>
             <div>
               Longest Distance
@@ -60,7 +60,7 @@ const DetailedStatsBox = ({ title, activities, activityType }) => {
           </div>
           <div className={dashboardStyles.detailedstat}>
             <div>
-              <Image src='/img/badge.png' width={32} height={32} />
+              <Image src={isDarkMode ? '/img/badge.png' : '/img/badge-black.png'} width={32} height={32} />
             </div>
             <div>
               Total Achievements
@@ -71,7 +71,7 @@ const DetailedStatsBox = ({ title, activities, activityType }) => {
           </div>
           <div className={dashboardStyles.detailedstat}>
             <div>
-              <Image src='/img/like.png' width={32} height={32} />
+              <Image src={isDarkMode ? '/img/like.png' : '/img/like-black.png'} width={32} height={32} />
             </div>
             <div>
               Total Kudos

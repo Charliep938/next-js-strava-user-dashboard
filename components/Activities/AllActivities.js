@@ -48,7 +48,7 @@ const AllActivities = ({ filteredActivities, paginatedActivities, totalPages, cu
                                     </div>
                                     <div className={activityStyles.individualStat}>
                                         <Image
-                                            src={getImageSrc(activity.sport_type)}
+                                            src={getImageSrc(activity.sport_type) + ".png"}
                                             width={32}
                                             height={32}
                                             alt="sport type"
