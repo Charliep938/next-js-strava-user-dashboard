@@ -26,42 +26,55 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-  }
-  
-  .activityFilter {
+}
+
+.activityFilter {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 100%;
-    height: 40px; /* Adjust height as needed */
-    font-size: 14px; /* Adjust font size as needed */
-    border: 0px solid #ccc; /* Adjust border styles as needed */
-    border-radius: 5px; /* Adjust border radius as needed */
+    height: 40px;
+    /* Adjust height as needed */
+    font-size: 14px;
+    /* Adjust font size as needed */
+    border: 0px solid #ccc;
+    /* Adjust border styles as needed */
+    border-radius: 5px;
+    /* Adjust border radius as needed */
     background-color: #2d3236;
     color: #fff;
     cursor: pointer;
-  }
-  
-  .activityFilter:focus {
-    outline: none;
-    border-color: #fc5200; /* Adjust focus border color as needed */
-  }
+}
 
-  
-  /* Style the options */
-  .activityFilter option {
-    background-color: #2d3236; /* Adjust background color as needed */
+.activityFilter span {
+    color: #fff !important;
+}
+
+.activityFilter:focus {
+    outline: none;
+    border-color: #fc5200;
+    /* Adjust focus border color as needed */
+}
+
+
+/* Style the options */
+.activityFilter option {
+    background-color: #2d3236;
+    /* Adjust background color as needed */
     padding: 1rem;
-    color: #ffffff; /* Adjust text color as needed */
+    color: #ffffff;
+    /* Adjust text color as needed */
     text-align: center;
-  }
-  
-  /* Style the selected option */
-  .activityFilter option:checked {
-    background-color: #fc5200; /* Adjust selected background color as needed */
-    color: #fff; /* Adjust selected text color as needed */
-  }
-  
+}
+
+/* Style the selected option */
+.activityFilter option:checked {
+    background-color: #fc5200;
+    /* Adjust selected background color as needed */
+    color: #fff;
+    /* Adjust selected text color as needed */
+}
+
 
 .optionContainer {
     padding: 1rem 0;
@@ -72,32 +85,68 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 0 0 10px 10px;
+    padding: 0;
+
+}
+
+.statBoxHeader::-webkit-scrollbar {
+    width: 18px;
+
+    /* Set the width of the scrollbar */
+}
+
+.statBoxHeader::-webkit-scrollbar {
+    width: 18px;
+
+    /* Set the width of the scrollbar */
+}
+
+.statBoxHeader::-webkit-scrollbar-track {
+    background: #2d3236;
     border-radius: 10px;
-    padding: 0 0 1rem 0;
+    /* Set the background color of the scrollbar track */
+}
+
+.statBoxHeader::-webkit-scrollbar-thumb {
+    background: #565c62;
+    border-radius: 10px;
+    /* Set the color of the scrollbar thumb */
+}
+
+.statBoxHeader::-webkit-scrollbar-thumb:hover {
+    background: #565c6270;
+    /* Set the color of the scrollbar thumb on hover */
 }
 
 .statBoxHeader {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     background-color: #2d3236;
     color: #ffffff;
     line-height: 1.9rem;
     text-align: center;
-    border-radius: 10px 10px 0 0;
-    border-bottom: 1px solid #ffffff20;
-    height: 30%;
+    height: 100%;
+    min-height: 60px;
+    max-height: 280px;
+    overflow: auto;
+    scrollbar-width: thin !important;
+    scrollbar-color: #fc5200 #2d3236 !important;
+    border-radius: 10px;
+}
+
+.allTotals>div>div.statRow {
+    padding: 1rem;
 }
 
 .statBoxHeader h2 {
     font-size: 1rem;
     width: 140px;
     text-align: left;
-    padding-left: 1rem;
 }
 
 .statBoxHeader p {
-    padding: 0 1rem;
+
     width: 150px;
 }
 
@@ -113,20 +162,12 @@
     color: #2d3236;
 }
 
-.activityFilter.light, .activityFilter.light label {
-    background-color: #ffffff;
-}
-
-.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select{
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
     color: #2d3236 !important;
 }
 
 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
     color: #2d3236 !important;
-}
-
-.activityFilter.dark {
-    color: #ffffff !important;
 }
 
 
@@ -151,13 +192,12 @@
 
 .statBox h2 {
     font-size: 1rem;
-    padding-left: 1rem;
     width: 140px;
     text-align: left;
 }
 
 .statBox p {
-    padding: 0 1rem;
+
     width: 150px;
 }
 
@@ -174,7 +214,7 @@
     padding: 0.2rem 0;
 }
 
-.statRow p:last-child {
+.statBoxHeader .statRow p:last-child {
     padding-right: 0;
 }
 
@@ -190,6 +230,11 @@
     text-align: center;
     border-radius: 10px;
     height: 100%;
+}
+
+.light.detailedstatBox {
+    background-color: #ffffff !important;
+    color: #2d3236;
 }
 
 .detailedstatBox h2 {
@@ -233,7 +278,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 10px;
     /* box-shadow: #64646f33 0px 7px 29px 0px; */
 }
 
@@ -289,8 +333,8 @@
 }
 
 .lastActivity P {
-    padding:1rem 2rem;
-    height:74px;
+    padding: 1rem 2rem;
+    height: 74px;
     display: flex;
     align-items: center;
 }
@@ -333,10 +377,16 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    padding: 1rem 0 0 0;
 }
 
 .poweredText {
     color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.light.poweredText {
+    color: #fc5200;
 }
 
 .stravaLogo svg {
@@ -345,7 +395,10 @@
 
 .filterContainer .MuiSelect-root {
     border: 0 !important;
+    background-color: #ffffff !important;
 }
+
+
 
 
 
@@ -355,54 +408,69 @@
         font-size: 1.5rem;
         padding-bottom: 1rem;
     }
+
     .topRow {
         flex-direction: column;
     }
+
     .boxContainer {
         flex-direction: column;
     }
+
     .allTotals {
         width: 100%;
     }
+
     .statRow p {
         font-size: 0.9rem;
     }
+
     .statRow p:last-child {
         display: none !important;
     }
+
     .lastActivityLeftColumn {
         width: 100%;
         text-align: center;
     }
+
     .lastActivityStatImage {
         padding: 0;
     }
+
     .lastActivity {
         width: 100%;
         padding: 1rem;
-        margin:0 0 1rem 0rem;
+        margin: 0 0 1rem 0rem;
     }
+
     .lastActivity h2 {
         padding-bottom: 1rem;
     }
+
     .lastActivity, .lastActivityRow {
         flex-direction: column;
     }
+
     .lastActivityRow {
-        padding:0;
+        padding: 0;
         justify-content: center;
         text-align: center;
     }
+
     .lastActivityStat:last-child {
         padding: 1rem 1rem 0.3rem 1rem;
     }
+
     .stackedCharts {
         width: 100%;
     }
+
     .poweredBy {
         justify-content: center;
         padding-bottom: 1rem;
     }
+
     .poweredText {
         text-align: center;
     }

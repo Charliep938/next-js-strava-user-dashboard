@@ -18,7 +18,7 @@ const TotalsAndBubble = ({ activities, selectedActivity, lastActivity, isDarkMod
   const renderAdditionalStatsBox = () => {
     if (selectedActivity !== 'All') {
       return (
-        <DetailedStatsBox key="Additional" title={selectedActivity} activities={activities} activityType={selectedActivity} />
+        <DetailedStatsBox key="Additional" title={selectedActivity} activities={activities} activityType={selectedActivity} isDarkMode={isDarkMode} />
       );
     }
     return null;
@@ -34,8 +34,6 @@ const TotalsAndBubble = ({ activities, selectedActivity, lastActivity, isDarkMod
             <p>Distance</p>
             <p>Elapsed Time</p>
           </div>
-        </div>
-        <div className={`${dashboardStyles.statsContainer} ${isDarkMode ? null : dashboardStyles.light}`}>
           {activities &&
             [...new Set(activities.map(activity => activity.sport_type))]
               .sort((a, b) => {
@@ -45,9 +43,8 @@ const TotalsAndBubble = ({ activities, selectedActivity, lastActivity, isDarkMod
               })
               .map(sportType => renderStatsBox(sportType, activities, selectedActivity))
           }
-          
-              </div>
-              {renderAdditionalStatsBox()}
+        </div>
+        {renderAdditionalStatsBox()}
       </div>
       <div className={dashboardStyles.stackedCharts}>
         <BubbleChart selectedActivity={selectedActivity} activities={activities} isDarkMode={isDarkMode} />

@@ -42,7 +42,7 @@ const Dashboard = ({athleteData, activities, isDarkMode}) => {
         <TotalsAndBubble activities={activities} selectedActivity={selectedActivity} lastActivity={lastActivity} isDarkMode={isDarkMode} />
         <ChartRow selectedActivity={selectedActivity} activities={activities} isDarkMode={isDarkMode} />
         <div className={dashboardStyles.poweredBy}>
-          <div className={dashboardStyles.poweredText}>Powered by <Link href='https://www.strava.com/' target='_blank'><StravaLogo /></Link></div>
+          <div className={`${dashboardStyles.poweredText} ${isDarkMode ? '' : dashboardStyles.light} `}>Powered by <Link href='https://www.strava.com/' target='_blank'><StravaLogo isDarkMode={isDarkMode} /></Link></div>
         </div>
       </div>
     </animated.div>

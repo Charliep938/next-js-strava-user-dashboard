@@ -9,7 +9,6 @@ const BubbleChart = ({ selectedActivity, activities, isDarkMode }) => {
 
     const router = useRouter();
 
-
     // Get the activities for the last 7 days
     const today = new Date(); // Current date and time
     today.setHours(23, 59, 59, 999); // Set the time to the end of the day

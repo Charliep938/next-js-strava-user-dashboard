@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/globals.css';
+import '../styles/slider.css';
 import globalStyles from '../styles/globals.module.css';
+import dashboardStyles from '../styles/Dashboard.module.css';
+import StravaLogo from '../Icons/StravaLogo';
 import homeStyles from '../styles/Home.module.css';
 import loaderStyles from '../styles/Loader.module.css';
 import Layout from '../components/Global/Layout';
@@ -22,7 +25,7 @@ function MyApp({ Component }) {
 
   const router = useRouter();
 
-  const mode = 'dev';
+  const mode = 'prod';
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -116,6 +119,9 @@ function MyApp({ Component }) {
             >
               <button className={homeStyles.btn}>Login with Your Strava Account</button>
             </Link>
+            <div className={dashboardStyles.poweredBy}>
+          <div className={`${dashboardStyles.poweredText} ${isDarkMode ? '' : dashboardStyles.light} `}>Powered by <Link href='https://www.strava.com/' target='_blank'><StravaLogo isDarkMode={isDarkMode} /></Link></div>
+        </div>
           </div>
         </main>
       </div>

@@ -3,6 +3,10 @@
   color: #ffffff;
   background-color: #2d3236;
   border-bottom: 5px solid #fc5200;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999999999;
 }
 
 .dark {
