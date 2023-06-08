@@ -294,6 +294,10 @@
         width: 100%;
     }
 
+    .dateFields > div:last-child {
+        margin: 0 !important;
+    }
+
     .sportFilter {
         margin: 1rem;
     }
@@ -320,11 +324,6 @@
 
     .kudosandDate {
         padding-bottom: 0.5rem;
-    }
-
-    .activityContainer {
-        height: 45vh;
-        overflow: hidden;
     }
 
     .activity {

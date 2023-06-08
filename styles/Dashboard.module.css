@@ -429,6 +429,10 @@
         display: none !important;
     }
 
+    .statBoxHeader {
+        max-height: fit-content !important;
+    }
+
     .lastActivityLeftColumn {
         width: 100%;
         text-align: center;
