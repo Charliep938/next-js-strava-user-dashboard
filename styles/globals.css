@@ -139,3 +139,6 @@ main {
   border: none !important;
 }
 
+.MuiList-root {
+  background-color: #2d3236 !important;
+}
