@@ -25,7 +25,7 @@ function MyApp({ Component }) {
 
   const router = useRouter();
 
-  const mode = 'prod';
+  const mode = 'dev';
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
