@@ -159,3 +159,7 @@ main {
   background-color: #2d3236 !important;
   color: #ffffff !important;
 }
+
+.MuiButton-root {
+  background-color: #fc5200 !important;
+}
